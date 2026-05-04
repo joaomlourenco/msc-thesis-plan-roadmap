@@ -36,6 +36,14 @@ These are the foundational theories, definitions, and technologies that a peer n
 
 #### Related Work (The “State of the Art”)
 This is the neighborhood you are moving into. It includes those working on your *exact* problem, but also those solving **analogous problems** in different domains.
+
+**The Four Pillars of Related Work:**
+* **Different Method, Same Problem:** Work tackling your exact problem with a different technical approach.
+* **Same Method, Different Problem:** Work using your proposed technology applied to a different domain.
+* **Similar Method, Similar Problem:** Your "closest neighbors" from which you must distinguish your niche.
+* **Problem Domain Discussion:** Broad papers covering the general domain and boundaries of your research.
+
+**Advanced Strategies:**
 *   **Focus:** Papers from the last 2–5 years.
 *   **Think Laterally:** Sometimes the best solution for your problem comes from a different field. 
     *   *Example:* If you are analyzing GPS trajectories, you might look at bioinformatics algorithms for DNA string comparison. By converting GPS coordinates into a sequence of symbols (chars), you can use established “string matching” techniques to find patterns in movement.
@@ -70,6 +78,20 @@ This is where you prove you are an engineer/scientist, not just a dreamer.
     *   *Month 3-5:* Implementation & Data Collection.
     *   *Month 6:* Analysis & Thesis Writing.
 *   **Buffer:** Always add a 20% “Oh no!” buffer for debugging and hardware failures.
+
+---
+
+## Literature Heuristics & Efficiency
+Reading effectively is as important as writing. Not all papers are created equal.
+
+### Is the Paper Worth Reading?
+* **The Quality Filter:** Use heuristics to decide within minutes if a paper deserves a deep dive or should be discarded.
+* **Reputation of Venues:** Understand how to select good venues (conferences or journals) to find high-quality publications.
+* **Speed Reading:** Learn to read scientific papers faster and more effectively to handle large quantities of information.
+
+### Organizing the Chaos
+* **Categorization:** Use your literature review to put order into the chaos by categorizing papers, making it beneficial for your readers.
+* **AI Synthesis:** Learn how to generate the Related Work section of a research paper using **NotebookLM** by uploading your curated PDFs and asking for comparative analysis.
 
 ---
 
