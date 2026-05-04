@@ -1,4 +1,4 @@
-# msc-thesis-plan-roadmap
+# MSc Thesis Plan Roadmap
 
 Welcome to the Success Guide for the NOVAthesis LaTeX Template.
 
