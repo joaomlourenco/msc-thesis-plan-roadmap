@@ -1,4 +1,4 @@
-# msc-thesis-plan-roadmap
+# MSc Thesis Plan Roadmap
 ## The Success Guide for the NOVAthesis LaTeX Template
 
 Welcome to the first major milestone of your Master’s journey. The **MSc Plan** is not just a hurdle; it is the architectural blueprint for your research. Your goal is to produce a document of **at most 35 pages** (using the `novathesis` LaTeX template) that proves your problem is worth solving, you understand the landscape, and you have a realistic path to execution.
