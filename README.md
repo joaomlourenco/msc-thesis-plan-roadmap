@@ -131,6 +131,7 @@ An engineering thesis is a technical manual, not a novel. Clarity and precision 
 
 ### Visuals & Layout
 *   **Vectors over Rasters:** Always use **PDF** or **EPS** for your diagrams and plots. These are vector formats that stay sharp at any zoom level. Only use PNG/JPG for actual photographs.
+*   **Screenshots & Themes:** If you must include screenshots of software or code, **do not** use dark mode. Always use a light theme for better readability and professional appearance on paper/standard PDF viewers.
 *   **Floating Objects (Figures & Tables):** In LaTeX, figures and tables are “floats.” They don’t have to stay exactly where you write the code. They should be at the top or bottom of the page near where they are first mentioned. 
     *   *Rule:* Never say “the figure below.” Always use a reference: “As shown in Figure~\ref{fig:arch}...”
 *   **Know Your Caption Style:** The expected detail in captions varies by field.
@@ -211,6 +212,7 @@ Use LLMs as a **Rubber Duck** or **Tutor**, never as a ghostwriter.
 
 ## Final Submission Checklist
 - [ ] **Length:** Is it under 35 pages? (Quality > Quantity).
+- [ ] **Visual Themes:** Are all screenshots taken in **light mode**? (Dark mode screenshots are hard to read in print).
 - [ ] **Figures:** Are all diagrams vector-based (PDF/SVG)? Can you read the text on the axes of your plots?
 - [ ] **The “Story”:** Does the Related Work naturally lead to the Gap, which naturally leads to your Solution?
 - [ ] **References:** Is every citation in the text present in the Bibliography? (LaTeX does this automatically, but check for “??”).
