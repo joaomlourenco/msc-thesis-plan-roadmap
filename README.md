@@ -291,6 +291,7 @@ Use LLMs as a **Rubber Duck** or **Tutor**, never as a ghostwriter.
 * [Advice for writing LaTeX documents](https://github.com/dspinellis/latex-advice), by [Diomidis Spinellis]([https://github.com/dspinellis](https://github.com/dspinellis))
 * [The Science of Scientific Writing](https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing), by *George Gopen* and *Judith Swan*  @ American Scientist
 * [Friends Don't Let Friends Make Bad Graphs](https://github.com/cxli233/FriendsDontLetFriends), by [C. Li](https://github.com/cxli233)
+* [Awesome LaTeX](https://github.com/egeerardyn/awesome-LaTeX?tab=readme-ov-file#packages), by Egon Geerardyn
 
 ---
 
