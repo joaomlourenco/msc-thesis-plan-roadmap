@@ -18,7 +18,7 @@ By the end of this phase, you are expected to be able to:
 - **Master Related Work:** Demonstrate solid knowledge of the "related work," providing a critical perspective (pros and cons) of the most relevant aspects.
 - **Master the Background:** Demonstrate solid knowledge of the fundamentals (background) of the areas related to the topic.
 - **Critical Tech Evaluation:** Demonstrate a critical evaluation of the relevant technologies.
-- **Work Plan:** Propose a credible work plan for the forthcoming phase of "elaboration," including a description of the main tasks, their interdependencies, and the timing/plan for each taks.
+- **Work Plan:** Propose a credible work plan for the forthcoming phase of "elaboration," including a description of the main tasks, their interdependencies, and the timing/plan for each task.
 
 ### Deliverables and Evaluation
 - **The Document:** You must write a document with **at most 35 pages** using the School's official template (`novathesis`).
@@ -57,7 +57,7 @@ The introduction is where you “win or lose” your reader. It must provide a l
     *   *Example (Scope):* “This thesis focuses on inference optimization. Training and federated learning are out of scope.”
     *   *Example (Assumptions):* “We assume constant network bandwidth of 10Mbps and hardware availability of at least one NVIDIA T4 GPU.”
 
-> **Pro-Tip:** Write a draft of yout Introduction early, to ensure you are in sync with your adviser in terms of the problem and objectvies.  Latter (maybe even as a last task), after your Methodology is firm, revise it carefully. *You can only properly introduce a journey once you know where it ends.*
+> **Pro-Tip:** Write a draft of your Introduction early, to ensure you are in sync with your advisor in terms of the problem and objectives. Later (maybe even as a last task), after your Methodology is firm, revise it carefully. *You can only properly introduce a journey once you know where it ends.*
 
 ---
 
@@ -186,7 +186,7 @@ An engineering thesis is a technical manual, not a novel. Clarity and precision 
 *   **No “Fluff”:** Delete words like “very,” “extremely,” or “basically.” If a result is significant, the data will show it.
 
 ### Visuals & Layout
-*   **Vectors over Rasters:** Always use **PDF** when exprting your diagrams and plots. This is a vector formats that stay sharp at any zoom level. Only use PNG/JPG for actual photographs. Both EPS and SVG are also excellent source vector formats that can be converted to PDF for inclusion in your LaTeX document.
+*   **Vectors over Rasters:** Always use **PDF** when exporting your diagrams and plots. These are vector formats that stay sharp at any zoom level. Only use PNG/JPG for actual photographs. Both EPS and SVG are also excellent source vector formats that can be converted to PDF for inclusion in your LaTeX document.
 *   **Screenshots & Themes:** If you must include screenshots of software or code, **do not** use dark mode. Always use a light theme when taking the screenshot for better readability and professional appearance on paper/standard PDF viewers.
 *   **Floating Objects (Figures & Tables):** In LaTeX, figures and tables are “floats.” They don’t have to stay exactly where you write the code. They should be at the top or bottom of the page near where they are first mentioned. 
     *   *Rule:* Never say “the figure below.” Always use a reference: “As shown in Figure~\ref{fig:arch}...”
@@ -207,17 +207,36 @@ An engineering thesis is a technical manual, not a novel. Clarity and precision 
 ## LaTeX Tips & Tricks
 The `novathesis` template is powerful, but these specific packages and practices will elevate your document from “good” to “professional.”
 
-### Essential Packages
-*   **`booktabs`:** Forget the standard horizontal and vertical lines. Use `\toprule`, `\midrule`, and `\bottomrule` to create clean, professional tables that look like they belong in a high-end journal.
-*   **`cleveref`:** Tired of typing “Figure~\ref{...}”? This package automates it. Just use `\cref{label}`, and it will automatically detect if it’s a Figure, Table, or Equation and format the text accordingly.
-*   **`enumitem`:** Gives you total control over lists (`itemize`, `enumerate`). Use it to reduce vertical spacing between items or to change numbering styles (e.g., a), b), c)).
-*   **`graphicx`** (*): The standard for including images. Always use `\includegraphics[width=FACTOR\textwidth]{...}` (e.g., `\includegraphics[width=0.75\textwidth]{...}`) to ensure your figures scale properly with your margins.
-*   **`fontenc [T1]`** (*): Ensures your PDF uses modern fonts that support accented characters and allows for proper copy-pasting from the final document, by using `\usepackage[T1]{fontenc}`.
-*   **`siunitx`**: The absolute gold standard for units. Use `\unit{10}{\milli\second}` to ensure the spacing and font for units are always mathematically correct.
-*   **`microtype`** (*): A “magic” package that slightly adjusts character spacing to eliminate awkward gaps in justified text and reduces the number of hyphens at the end of lines.
-*   **`glossaries-extra`** (*): Managing acronyms manually is a recipe for error. Use this to define terms once and have LaTeX handle the “First mention (Full Name)” vs. “Subsequent mention (Acronym)” logic automatically.
+### Essential Packages Already Included in `novathesis`
+
+*   [`microtype`](https://www.ctan.org/pkg/microtype): A “magic” package that slightly adjusts character spacing to eliminate awkward gaps in justified text and reduces the number of hyphens at the end of lines.
+*   [`glossaries-extra`](https://www.ctan.org/pkg/glossaries-extra): Managing acronyms manually is a recipe for error. Use this to define terms once and have LaTeX handle the “First mention (Full Name)” vs. “Subsequent mention (Acronym)” logic automatically.
+*   [`graphicx`](https://www.ctan.org/pkg/graphicx): The standard for including images. Always use `\includegraphics[width=FACTOR\textwidth]{...}` (e.g., `\includegraphics[width=0.75\textwidth]{...}`) to ensure your figures scale properly with your margins.
+*   [`fontenc [T1]`](https://www.ctan.org/pkg/fontenc): Ensures your PDF uses modern fonts that support accented characters and allows for proper copy-pasting from the final document, by using `\usepackage[T1]{fontenc}`.
+*   [`hyperref`](https://www.ctan.org/pkg/hyperref): Transforms your citations, references, and URLs into clickable links. It also automatically generates a PDF outline (bookmarks), making your document much easier to navigate on digital screens.
+*   [`PGF/TikZ`](https://www.ctan.org/pkg/pgf): A powerful tool for creating complex, high-quality vector graphics directly within LaTeX. It ensures that your diagrams use the same fonts and mathematical symbols as your main text for a perfectly integrated look.
+
+
+### Other Very Useful Packages 
+
+*   [`booktabs`](https://www.ctan.org/pkg/booktabs): Forget the standard horizontal and vertical lines. Use `\toprule`, `\midrule`, and `\bottomrule` to create clean, professional tables that look like they belong in a high-end journal.
+*   [`cleveref`](https://www.ctan.org/pkg/cleveref): Tired of typing `Figure~\ref{...}`? This package automates it. Just use `\cref{label}`, and it will automatically detect if it’s a Figure, Table, or Equation and format the text accordingly.
+*   [`enumitem`](https://ctan.org/pkg/enumitem): Gives you total control over lists (`itemize`, `enumerate`). Use it to reduce vertical spacing between items or to change numbering styles (e.g., a), b), c)).
+*   [`siunitx`](https://www.ctan.org/pkg/siunitx): The absolute gold standard for units. Use `\unit{10}{\milli\second}` to ensure the spacing and font for units are always mathematically correct.
+*   [`csquotes`](https://www.ctan.org/pkg/csquotes): Provides advanced facilities for inline and block quotations. It automatically handles nested quotes and ensures that punctuation is placed correctly according to your document's language settings.
+*   [`todonotes`](https://www.ctan.org/pkg/todonotes): A lifesaver during the drafting phase. It allows you to place 'To-Do' notes in the margins or as a list at the beginning of the document, ensuring you never forget to address a pending task or a comment from your advisor.
+*   [`algorithmicx`](https://www.ctan.org/pkg/algorithmicx): Provides a flexible environment for typesetting algorithms in a clear, structured way. It supports nested loops, conditionals, and can be customized to match the pseudocode style of your specific research community.
+*   [`amsmath`, `amssymb`](https://www.ctan.org/pkg/amsmath): The industry standard for mathematical typesetting. They provide advanced environments for multi-line equations, custom operators, and a vast library of mathematical symbols.
+*   [`amsthm`](https://www.ctan.org/pkg/amsthm): Offers a structured way to typeset theorems, definitions, lemmas, and proofs. It allows you to easily switch between different styles while maintaining consistent numbering.
+*   [`listings`](https://www.ctan.org/pkg/listings): A robust package for including source code. It supports syntax highlighting, line numbering, and can import code directly from external files.
+*   [`minted`](https://www.ctan.org/pkg/minted): An alternative to `listings` that uses the Python-based Pygments library for superior syntax highlighting. Ideal for professional-grade coloring of complex languages.
+*   [`xurl`](https://www.ctan.org/pkg/xurl): A simple but essential package that allows URLs to break at any character, preventing long web addresses from overflowing into the margins.
+*   [`widows-and-orphans`](https://www.ctan.org/pkg/widows-and-orphans): Helps you maintain high typographic standards by identifying 'widows' (a single line at the top of a page) and 'orphans' (a single line at the bottom) and providing warnings.
+
 
 (\*) Pre-loaded in the `novathesis` template.
+
+
 
 ### Workflow Hacks
 *   **Comment your logic:** Use `%` to leave notes for yourself or your advisor in the source code.
@@ -265,6 +284,13 @@ Use LLMs as a **Rubber Duck** or **Tutor**, never as a ghostwriter.
     *   **DOI2BIB:** Use this to generate clean, minimal BibTeX entries. Avoid the “messy” BibTeX often found on Google Scholar.
     *   **LLM Assistance:** LLMs can convert raw text references into clean BibTeX entries and search for DOIs. You **must** manually verify the quality of the generated entry and the validity of the DOI.
 *   **Local Setup:** For power users, use **VS Code + LaTeX Workshop + GitHub**.
+
+---
+
+## Miscelaneous Interesting Sites
+* [Advice for writing LaTeX documents](https://github.com/dspinellis/latex-advice), by [Diomidis Spinellis]([https://github.com/dspinellis](https://github.com/dspinellis))
+* [The Science of Scientific Writing](https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing), by *George Gopen* and *Judith Swan*  @ American Scientist
+* [Friends Don't Let Friends Make Bad Graphs](https://github.com/cxli233/FriendsDontLetFriends), by [C. Li](https://github.com/cxli233)
 
 ---
 
