@@ -18,10 +18,11 @@ By the end of this phase, you are expected to be able to:
 - **Master Related Work:** Demonstrate solid knowledge of the "related work," providing a critical perspective (pros and cons) of the most relevant aspects.
 - **Master the Background:** Demonstrate solid knowledge of the fundamentals (background) of the areas related to the topic.
 - **Critical Tech Evaluation:** Demonstrate a critical evaluation of the relevant technologies.
-- **Work Plan:** Propose a credible work plan for the forthcoming phase of "elaboration," including a description of the main tasks, their interdependencies, and the timing/plan for each task.
+- **Work Plan:** Propose a credible work plan for the "elaboration" phase. This includes defining clear **task boundaries**, managing **overlaps**, and identifying **interdependencies** to create a realistic roadmap. (See *Temporal Planning* for detailed guidance).
 
 ### Deliverables and Evaluation
 - **The Document:** You must write a document with **at most 35 pages** using the School's official template (`novathesis`).
+    *   *Note:* The MSc Plan is a solid foundation for your final MSc Thesis/Dissertation. However, it should **never be used "as is"** in the final stage; it must be carefully revised, expanded, and updated as your research evolves and results are obtained.
 - **The Exam:** The phase concludes with an exam including an oral presentation (15 min) and a Q&A session with your advisor and a professor from the department who has carefully reviewed your work.
 - **The Committee:** The attitude is generally positive and constructive, but be prepared for "hard" questions on any of the expectations listed above.
 - **The Result:** The result is binary: **Approved** or **Failed**.
@@ -29,17 +30,19 @@ By the end of this phase, you are expected to be able to:
 ---
 
 ## Document Structure
-> **Important Note:** The structure, organization, and contents listed below are **ONLY SUGGESTIONS** (hints) and should never be followed blindly. Every research project is unique; you are expected to create your own document structure tailored to your specific topic, goals, and approach.
 
 The following three chapters represent a typical baseline for an MSc Plan. Together, they must tell a cohesive story: from the broad context of the field to the specific technical gap you intend to fill, and finally to the concrete engineering roadmap you will follow.
 
 ### Mandatory: AI Disclosure Statement
-Both the MSc Plan and the MSc Thesis **must** include an AI Disclosure Statement. 
+
+According to NOVA FCT regulations, both the MSc Plan and the MSc Thesis **must** include an AI Disclosure Statement. 
 - **The Requirement:** You must accurately and transparently declare how (and to what extent) AI tools (like LLMs, GitHub Copilot, etc.) were used in the research, coding, or writing process.
 - **Why it Matters:** A clear declaration is crucial for the **credibility** and **evaluation** of your work. It allows the committee to properly appreciate your original contributions and ensures scientific integrity.
 - **Consequence:** Failure to disclose or providing an inaccurate declaration can lead to serious ethical queries and may affect the final evaluation.
 
 ---
+
+> **Important Note:** The structure, organization, and contents listed below are **ONLY SUGGESTIONS** (hints) and should never be followed blindly. Every research project is unique; you are expected to create your own document structure tailored to your specific topic, goals, and approach.
 
 ### Chapter 1: The Introduction (The Hook)
 The introduction is where you “win or lose” your reader. It must provide a logical bridge from the general domain to your specific niche.
@@ -94,10 +97,20 @@ While Background covers *theory*, Related Technologies covers the *tools* you wi
 *   **The “Why” Factor:** Don’t just list them. Justify why you chose [Tech A] over [Tech B]. (e.g., “While Docker is common, we use Podman because of its rootless architecture, which is critical for our security objective [O2]”).
 *   **Integration:** This section should link the problems identified in the *Related Work* to the specific tools you’ll use to solve them in your *Methodology*.
 
+#### Critical & Assertive Evaluation (The “Verdict”)
+This chapter is not just a summary; it is an **argument**. You must be critical and assertive regarding the state of the art and the available technologies.
+*   **Identify Limitations:** Be explicit about what existing works fail to do. This "critical gap" is the justification for your own research.
+*   **Identify Reusable Assets:** Not everything in previous work is "bad." Identify good aspects, specific algorithms, or architectural patterns that are solid and can be reused in your solution.
+*   **Organizational Strategy:** You can choose the style that best fits your narrative:
+    *   **In-Section Analysis:** Provide a critical summary and "reusability verdict" immediately after discussing each major work or technology.
+    *   **Chapter Synthesis:** Dedicate a final section at the end of Chapter 2 to provide a consolidated, comparative analysis of all the "neighbors" and "gear" you've discussed.
+
 ---
 
 ### Chapter 3: Workplace & Methodology (The Blueprint)
 This is where you prove you are an engineer/scientist, not just a dreamer.
+
+**The Opening Statement:** Start this chapter with a very brief (one paragraph) presentation of the specific problem you are addressing and the core insight behind your proposed solution. This "refresher" ensures the reader has the key context before diving into the technical details.
 
 #### Proposed Solution (The “What”)
 *   **Architecture:** Use a clean, vector-based diagram (use TikZ or draw.io exported as PDF).
@@ -120,13 +133,19 @@ Ensuring others can replicate your results is key to scientific credibility.
 *   **Experiment Tracking:** Describe how you will log configurations (e.g., via YAML/JSON files) and record results to ensure every run is traceable.
 
 #### Temporal Planning (The “When”)
-*   **Task Descriptions:** Clearly defined tasks with specific start and end dates. 
-*   **Gantt Chart:** Use `pgfgantt` in LaTeX to visualize your timeline. 
-*   **Interdependencies:** Clearly identify how tasks depend on each other (e.g., Task B cannot start until Task A is finished).*   **Reality Check:** 
-    *   *Month 1-2:* Setup & Prototyping.
-    *   *Month 3-5:* Implementation & Data Collection.
-    *   *Month 6:* Analysis & Thesis Writing.
-*   **Buffer:** Always add a 20% “Oh no!” buffer for debugging and hardware failures.
+*   **Defining Task Scope:** Each task should have a clear **boundary** and a specific **deliverable** (e.g., a software module, a dataset, or a draft chapter). A well-scoped task is small enough to be manageable (2–4 weeks) but large enough to represent significant progress.
+    *   *Rule of Thumb:* If you can't describe the "Done" state in one sentence, the task is too broad.
+*   **How to Define Tasks:** Use a top-down approach. Start with major milestones (e.g., "Prototype Complete") and break them into technical sub-tasks (e.g., "Database Schema Design," "API Implementation"). Ensure each task is **actionable** and **measurable**.
+*   **Managing Task Overlap:** Parallelism is often necessary (e.g., writing the background while waiting for data collection).
+    *   **Loose Coupling:** Ensure overlapping tasks don't block each other.
+    *   **Resource Allocation:** Be realistic about your cognitive load; don't plan three high-intensity coding tasks for the same week.
+    *   **Buffer for Context Switching:** Overlapping tasks require "mental rebooting." Add extra time to your estimates when switching between radically different domains (e.g., hardware setup vs. literature review).
+*   **Interdependencies:** Use a Gantt Chart (`pgfgantt`) to visualize the critical path. Clearly identify which tasks are **blocking** (Task B cannot start until Task A ends) and which are **concurrent**.
+*   **Reality Check:** 
+    *   *Month 1-2:* Environment Setup, Prototyping, and Initial Implementation.
+    *   *Month 3-5:* Core Development, Experimentation, and Data Collection.
+    *   *Month 6:* Final Analysis, Evaluation, and Thesis Writing.
+*   **The "Oh No!" Buffer:** Always add a 20% margin to your timeline for unexpected bugs, hardware failures, or advisor feedback cycles.
 
 ---
 
@@ -184,6 +203,10 @@ An engineering thesis is a technical manual, not a novel. Clarity and precision 
 *   **Active Voice (The “I/We” Rule):** In modern engineering, we avoid the passive voice (“The data was collected”). Use the active voice to clarify responsibility: “I collected the data” or “We implemented the algorithm.”
 *   **Repeat the Subject:** Avoid using “it,” “this,” or “that” to start a sentence unless the reference is 100% clear. It is better to repeat the noun (“The algorithm improves...”) than to leave the subject implicit.
 *   **No “Fluff”:** Delete words like “very,” “extremely,” or “basically.” If a result is significant, the data will show it.
+*   **Precision & Quantifiability:** Avoid vague adjectives like “fast,” “efficient,” or “better.” If a result is good, quantify it. Use benchmarks or specific metrics (e.g., “The system maintains a latency below 50ms under peak load”).
+*   **Parallel Structure:** When listing items or comparing ideas, use the same grammatical pattern. This improves scannability and logical flow (e.g., “The module handles data ingestion, metric calculation, and report generation”).
+*   **One Idea, One Paragraph:** Start every paragraph with a **topic sentence** that captures its main point. If you transition to a new concept, start a new paragraph. This prevents dense “walls of text.”
+*   **The “Present Tense” Convention:** Use the present tense to describe your proposed architecture, algorithms, and established scientific facts. Use the past tense only for actions already completed (e.g., “We conducted the survey in 2023”).
 
 ### Visuals & Layout
 *   **Vectors over Rasters:** Always use **PDF** when exporting your diagrams and plots. These are vector formats that stay sharp at any zoom level. Only use PNG/JPG for actual photographs. Both EPS and SVG are also excellent source vector formats that can be converted to PDF for inclusion in your LaTeX document.
@@ -260,10 +283,10 @@ The `novathesis` template is powerful, but these specific packages and practices
 
 ### Academic Credibility: The “Quality Filter”
 Evaluate your sources using these industry standards:
-*   **CORE Rankings (CS Only):** Aim for A* or A conferences. B is acceptable. C requires scrutiny. [Portal](https://portal.core.edu.au/conf-ranks/)
-*   **SJR (Scimago Journal Rank):** Look for Q1 (top 25%) or Q2 journals.
-*   **H5-Index:** Found on Google Scholar “Metrics.” It shows the impact of a venue over the last 5 years.
-*   **Citation Count:** If a paper from 2022 has 100+ citations, it’s a “must-read.”
+*   **[CORE Rankings (CS Only)](https://portal.core.edu.au/conf-ranks/):** Aim for A* or A conferences. B is acceptable. C requires scrutiny.
+*   **[SJR (Scimago Journal Rank)](https://www.scimagojr.com/):** Look for Q1 (top 25%) or Q2 journals to ensure high scientific impact.
+*   **[H5-Index](https://scholar.google.com/citations?view_op=top_venues):** Found on Google Scholar “Metrics.” It shows the impact of a venue over the last 5 years.
+*   **Citation Count:** If a paper from 2022 has 100+ citations, it’s a “must-read.” (Check via [Google Scholar](https://scholar.google.com)).
 
 ### AI & LLM Pedagogy (Ethics & Integrity)
 Use LLMs as a **Rubber Duck** or **Tutor**, never as a ghostwriter.
@@ -280,18 +303,31 @@ Use LLMs as a **Rubber Duck** or **Tutor**, never as a ghostwriter.
     *   **[WebLaTeX](https://github.com/sanjib-sen/WebLaTex):** Recommended only for advanced, “tech-safe” users who require specialized control over their environment.
 *   **Template:** Use the **novathesis** template (available on **[Overleaf](https://www.overleaf.com/latex/templates/novathesis-template/mpxfgrvskvwy)** or **[GitHub](https://github.com/joaomlourenco/novathesis)**). It’s the easiest way to ensure your formatting meets university standards.
 *   **Bib Management:** 
-    *   **Zotero:** The gold standard for managing references.
-    *   **DOI2BIB:** Use this to generate clean, minimal BibTeX entries. Avoid the “messy” BibTeX often found on Google Scholar.
+    *   **[Zotero](https://www.zotero.org):** The gold standard for managing references. Use the **[Better BibTeX](https://retorque.re/zotero-better-bibtex/)** extension for the best results with LaTeX.
+    *   **[DOI2BIB](https://www.doi2bib.org):** A simple and effective tool to generate clean, minimal BibTeX entries from a DOI. Avoid the “messy” BibTeX often found on Google Scholar.
+    *   **Other DOI-to-BibTeX Tools:** If DOI2BIB is unavailable, try **[ZoteroBib (zbib.org)](https://zbib.org/)** or **[BibTeX.com](https://www.bibtex.com/c/doi-to-bibtex-converter/)** for reliable metadata fetching.
     *   **LLM Assistance:** LLMs can convert raw text references into clean BibTeX entries and search for DOIs. You **must** manually verify the quality of the generated entry and the validity of the DOI.
 *   **Local Setup:** For power users, use **VS Code + LaTeX Workshop + GitHub**.
 
+### Essential Web Utilities
+* **[Detexify](https://detexify.kirelabs.org/classify.html)** – LaTeX symbol classifier (handwriting recognition)
+*   **[Mathpix Snip](https://mathpix.com):** The gold standard for equation OCR. Convert screenshots of complex formulas (from papers or handwriting) directly into clean LaTeX code.
+*   **[Tables Generator](https://www.tablesgenerator.com):** Design your tables in a visual, spreadsheet-like interface and export the LaTeX code. It saves hours of manual formatting.
+*   **[Mathcha](https://www.mathcha.io):** A powerful visual editor for mathematics and **TikZ diagrams**. Draw your architecture diagrams visually and export them as pure TikZ code.
+*   **[TikZcd-editor](https://tikzcd.yichuanshen.de):** A specialized visual tool for creating commutative diagrams and category theory maps.
+*   **[Octree](https://useoctree.com) / [Bibby AI](https://trybibby.com):** Next-generation AI-native LaTeX editors that offer project-wide awareness and autonomous formatting assistance.
+
 ---
 
-## Miscelaneous Interesting Sites
-* [Advice for writing LaTeX documents](https://github.com/dspinellis/latex-advice), by [Diomidis Spinellis]([https://github.com/dspinellis](https://github.com/dspinellis))
-* [The Science of Scientific Writing](https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing), by *George Gopen* and *Judith Swan*  @ American Scientist
+## Miscellaneous Interesting Sites
+* [Advice for writing LaTeX documents](https://github.com/dspinellis/latex-advice), by [Diomidis Spinellis](https://github.com/dspinellis)
+* [How to Write a Great Research Paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/), by *Simon Peyton Jones*
+* [The Science of Scientific Writing](https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing), by *George Gopen* and *Judith Swan* @ American Scientist
+* [The Not So Short Introduction to LaTeX 2ε](https://tobi.oetiker.ch/lshort/lshort.pdf), by *Tobias Oetiker*
+* [TeXample.net (TikZ Gallery)](https://texample.net/tikz/examples/) – A massive collection of TikZ examples with source code
 * [Friends Don't Let Friends Make Bad Graphs](https://github.com/cxli233/FriendsDontLetFriends), by [C. Li](https://github.com/cxli233)
-* [Awesome LaTeX](https://github.com/egeerardyn/awesome-LaTeX?tab=readme-ov-file#packages), by Egon Geerardyn
+* [Ten Simple Rules for Better Figures](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833), by *Rougier et al.*
+* [Awesome LaTeX](https://github.com/egeerardyn/awesome-LaTeX?tab=readme-ov-file#packages), by *Egon Geerardyn*
 
 ---
 
