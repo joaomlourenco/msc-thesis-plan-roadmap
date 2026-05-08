@@ -55,7 +55,14 @@ The introduction is where you “win or lose” your reader. It must provide a l
 3.  **Objectives (Fill the Gap):** State your goals very objectively. **Do not** use generic statements. Use S.M.A.R.T. criteria for justifying the relevance of your goals.
     *   *S.M.A.R.T:* Specific, Measurable, Achievable, Relevant, and Time-bound.
 4.  **Insight & Expected Contributions (The “Value Add”):** What is your “secret sauce”?
-    *   *Mentorship Advice:* Don’t just say “I will build a system.” Say “The system will leverage [Novel Insight X] to achieve [Performance Gain Y].”
+    *   *Mentorship Advice:* Don’t just say “I will build a system.” Use a phrasing that highlights the specific value added:
+        *   **Performance-Oriented:** “The system will leverage [Novel Insight X] to achieve **[Performance Gain Y]**.”
+        *   **Capability-Oriented:** “The system will leverage [Novel Insight X] to **enable [New Functionality Z]**, overcoming the [Specific Barrier] inherent in current approaches.”
+        *   **Property-Oriented:** “By incorporating [Novel Insight X], the system will **guarantee [Property P]** (e.g., leveraging blockchain to achieve **auditability**) while maintaining [Baseline Performance].”
+        *   **Process-Oriented:** “The system will apply [Novel Insight X] to **simplify [Task T]**, reducing the [Operational Complexity] (e.g., leveraging LLMs to **automate the generation of boilerplate code**) associated with [Current Methods].”
+    *   *If you cannot yet quantify the gain,* focus on the **Behavioral Change** or the **Structural Trade-off**:
+        *   **Behavioral Validation:** “The system will leverage [Insight X] to **ensure [Behavior B]** under [Condition S], validating the robustness of the approach where current solutions fail.”
+        *   **Trade-off Analysis:** “The system will apply [Insight X] to **shift the trade-off** between [Metric A] and [Metric B], providing a more favorable balance for [Specific Use Case].”
 5.  **Scope & Assumptions (Define the Boundaries):** Prevent “scope creep” by clearly stating what is *not* being done and what you are taking for granted.
     *   *Example (Scope):* “This thesis focuses on inference optimization. Training and federated learning are out of scope.”
     *   *Example (Assumptions):* “We assume constant network bandwidth of 10Mbps and hardware availability of at least one NVIDIA T4 GPU.”
