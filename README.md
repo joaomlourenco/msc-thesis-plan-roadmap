@@ -11,7 +11,7 @@ The MSc dissertation is divided into two distinct phases: the **preparation** (t
 
 ### Deliverables and Evaluation
 
-- **The Document:** You must write a document of **at most 35 pages** using the School's official template (**NOVAthesis**, see Section 7). The limit refers to the main content (pages numbered with arabic numbers) and does not include the Bibliography; when in doubt about what counts (front matter, bibliography, annexes), confirm with your advisor.
+- **The Document:** You must write a document of **at most 35 pages** using the School's official template (**NOVAthesis**, see Section 8). The limit refers to the main content (pages numbered with arabic numbers) and does not include the Bibliography; when in doubt about what counts (front matter, bibliography, annexes), confirm with your advisor.
     - *Note:* The MSc Plan is a solid foundation for your final MSc Thesis. However, it should **never be used “as is”** in the final stage; it must be carefully revised, expanded, and updated as your research evolves and results are obtained.
 - **The MSC Plan Discussion:** The *MSc Plan* phase concludes with an exam including an oral presentation (15 min) and followed by a Q&A session.
 - **The Committee:**  The commmittee includes your advisor and another professor from the department, who has volunteered to carefully reviewed your document and will discuss your work plan with you. The attitude is generally positive and constructive, but be prepared for “hard” questions on any of the expectations listed in Section 2.
@@ -39,11 +39,39 @@ By the end of this phase, you are expected to be able to:
 - **Master Related Work:** Demonstrate solid knowledge of the “related work,” providing a critical perspective (pros and cons) of the most relevant aspects. Expect some non-trivial questions on this topic.
 - **Master the Background:** Demonstrate solid knowledge of the fundamentals (background) of the areas related to the topic. Expect some non-trivial questions on this topic.
 - **Critical Tech Evaluation:** Demonstrate a critical evaluation of the relevant technologies.
-- **Work Plan:** Propose a credible work plan for the “elaboration” phase (see *Temporal Planning* in Section 3 for detailed guidance).
+- **Work Plan:** Propose a credible work plan for the “elaboration” phase (see *Temporal Planning* in Section 4 for detailed guidance).
 
 ---
 
-## 3. Document Structure (Suggestions Only)
+## 3. Your Thesis Is an Experiment: The Scientific Method in Engineering
+
+Before diving into the document structure, step back and notice something useful: the engineering process you already know is the scientific method in disguise. Your thesis is not “just building a system”; it is running an experiment.
+
+| The Scientific Method | The Engineering Process |
+|---|---|
+| Observation & research question | Requirements & problem statement |
+| Literature review | Study of existing systems and prior art |
+| Hypothesis | Your design and its core insight |
+| Experiment | Prototype, tests, and benchmarks |
+| Analysis & conclusion | Evaluation against the requirements |
+| Peer review & replication | Code review & reproducible builds |
+| New questions | Next iteration |
+
+Keep five consequences in mind:
+
+- **Debugging is the scientific method.** You observe a failure, hypothesize its cause, predict what a fix should change, instrument the code, and accept or reject the hypothesis. If you debug by random mutation, you are doing bad science.
+- **Your prototype is the experimental apparatus, not the contribution.** The system you build plays the role a telescope plays for an astronomer: it exists to test your insight. Your contribution is the validated insight, and that is why the committee will keep asking about validation.
+- **Iteration is part of the method.** Each development cycle produces evidence that confirms or refutes your assumptions, and your plan should be revised accordingly. Neither science nor engineering is a linear waterfall.
+- **Beware of contamination.** In a wet lab, a dirty test tube or a stray bacterium invalidates the experiment. Your test machine is your lab bench, and it contaminates just as easily: background processes competing for CPU, cache, or network, other users on a shared server, a changed library version, or even thermal throttling can silently alter the functional behavior or the performance of your prototype. Control the environment (dedicated machine, pinned dependencies, repeated runs) and record its state, so that contamination can be detected and your results reproduced.
+- **Predict before you run.** You can only perceive a malfunction, or a contaminated result, if you knew what to expect. Before running an experiment, write down your prediction: the expected values, or at least the expected trend and order of magnitude. Without a prediction made *before* running the experiment (or analyzing the results), every result looks valid, and errors pass unnoticed. With a prediction, a surprise becomes a signal: either a discovery or a bug to investigate. This is exactly how a wet-lab scientist spots a contaminated culture: by knowing what a clean one looks like.
+
+The analogies above also have limits, and knowing them keeps you honest: science optimizes for *knowledge* (a negative result is still a result), while engineering optimizes for a *working artifact* (a negative result means rework); and nature's laws do not change during your experiment, but requirements do.
+
+This mapping is exactly what the suggested structure in Section 4 implements: Chapter 1 of the Dissertation Plan document states your question and hypothesis, Chapter 2 is your literature review, and Chapter 3 is your experiment design.
+
+---
+
+## 4. Document Structure (Suggestions Only)
 
 > **Important Note:** The structure, organization, and contents listed below are **ONLY SUGGESTIONS** (hints) and should never be followed blindly. Every research project is unique; you are expected to create your own document structure tailored to your specific topic, goals, and approach.
 
@@ -80,7 +108,7 @@ The introduction is where you “win or lose” your reader. It must provide a l
 
 ### Chapter 2: Background, Related Work, and Related Technologies
 
-A common mistake is treating these three as the same. Think of them as **”The Science vs. The Neighbors vs. The Gear.”** (This heading describes the *contents*; pick your own chapter title and split into more chapters if it suits your topic.)
+A common mistake is treating these three as the same. Think of them as **“The Science vs. The Neighbors vs. The Gear.”** (This heading describes the *contents*; pick your own chapter title and split into more chapters if it suits your topic.)
 
 #### Scientific Background (The “Book Knowledge”)
 
@@ -88,7 +116,7 @@ These are the foundational theories, definitions, and technologies that a peer n
 
 - **Focus:** Fundamental concepts, protocols, mathematics, hardware specs, and established algorithms.
 - **Source:** Textbooks, tutorials, and seminal (old but gold) papers.
-- **Checklist:** *”If I mention a term that isn't common knowledge, is it defined here?”*
+- **Checklist:** *“If I mention a term that isn't common knowledge, is it defined here?”*
 
 #### Related Work (The “State of the Art”)
 
@@ -106,7 +134,7 @@ This is the neighborhood you are moving into. It includes not only those working
 - **Focus:** Papers from the last 2-5 years.
 - **Think Laterally:** Sometimes the best solution for your problem comes from a different field.
     - *Example:* If you are analyzing GPS trajectories, you might look at bioinformatics algorithms for DNA string comparison. By converting GPS coordinates into a sequence of symbols (chars), you can use established “string matching” techniques to find patterns in movement.
-- **The Synthesis Matrix:** Don't write a list of summaries (”Author A did X. Author B did Y.”). Create a table comparing existing works based on features, performance, or limitations.
+- **The Synthesis Matrix:** Don't write a list of summaries (“Author A did X. Author B did Y.”). Create a table comparing existing works based on features, performance, or limitations.
 - **Transposing the Matrix (The Pro Move):** Use the *columns* (properties/features) of your matrix as your subheadings, not the rows (authors).
     - *Why?* Writing about “Scalability” or “Accuracy” across all papers is much more insightful than writing three separate paragraphs about three different papers. It forces you to compare them directly and makes the “Gap” in the literature obvious.
 - **Gap Analysis:** This is the most critical section. You must conclude this chapter by explaining why the existing works (including the analogous ones) are insufficient for your specific problem.
@@ -137,7 +165,7 @@ This is where you prove you are an engineer/scientist, not just a dreamer.
 
 #### Proposed Solution (The “What”)
 
-- **Architecture:** Use a clean, vector-based diagram (use TikZ or draw.io exported as PDF; see *Visuals & Layout* in Section 6).
+- **Architecture:** Use a clean, vector-based diagram (use TikZ or draw.io exported as PDF; see *Visuals & Layout* in Section 7).
 - **Work Environment:** Detail the software stacks, hardware constraints, or laboratory settings you will rely on.
 
 #### Validation Strategy (The “How”)
@@ -177,7 +205,7 @@ Ensuring others can replicate your results is key to scientific credibility.
 
 ---
 
-## 4. Working with the Literature
+## 5. Working with the Literature
 
 Reading effectively is as important as writing. Not all papers are created equal.
 
@@ -220,7 +248,7 @@ Use LLMs as a **Rubber Duck** or **Tutor**, never as a ghostwriter.
 
 ---
 
-## 5. Citation Mechanics & Ethics
+## 6. Citation Mechanics & Ethics
 
 In technical writing, citations are the “currency” of credibility. Misplacing them can lead to ambiguity or, worse, accusations of plagiarism.
 
@@ -235,7 +263,7 @@ The placement of a citation changes its meaning. Follow these rules:
 3.  **End of the Paragraph (Block Support):** **Avoid this.** Placing a single citation at the end of a paragraph is ambiguous. Does it support the last sentence or the whole paragraph?
     - *Pro-Tip:* Cite as early as possible in the paragraph to establish the source of the logic.
 
-(For the LaTeX mechanics of citing, see *Workflow Hacks* in Section 7.)
+(For the LaTeX mechanics of citing, see *Workflow Hacks* in Section 8.)
 
 ### Ethics & Giving Credit
 
@@ -248,15 +276,15 @@ The placement of a citation changes its meaning. Follow these rules:
 
 ---
 
-## 6. Technical Writing & Typography
+## 7. Technical Writing & Typography
 
 An engineering thesis is a technical manual, not a novel. Clarity and precision are your primary goals. Use these rules to ensure your text is professional and readable.
 
 ### The Writing Style
 
 - **Short & Punchy Sentences:** Avoid long, winding sentences with multiple sub-clauses. If a sentence is longer than three lines, break it in two.
-- **Prefer the Active Voice:** The active voice clarifies responsibility: “We implemented the algorithm” instead of “The algorithm was implemented.” Agree with your advisor on the person to use (”I” vs. “we”); “we” is the most common choice, and the passive voice is still acceptable where the actor is irrelevant (e.g., in method descriptions).
-- **Repeat the Subject:** Avoid using “it,” “this,” or “that” to start a sentence unless the reference is 100% clear. It is better to repeat the noun (”The algorithm improves...”) than to leave the subject implicit.
+- **Prefer the Active Voice:** The active voice clarifies responsibility: “We implemented the algorithm” instead of “The algorithm was implemented.” Agree with your advisor on the person to use (“I” vs. “we”); “we” is the most common choice, and the passive voice is still acceptable where the actor is irrelevant (e.g., in method descriptions).
+- **Repeat the Subject:** Avoid using “it,” “this,” or “that” to start a sentence unless the reference is 100% clear. It is better to repeat the noun (“The algorithm improves...”) than to leave the subject implicit.
 - **No “Fluff”:** Delete words like “very,” “extremely,” or “basically.” If a result is significant, the data will show it.
 - **Precision & Quantifiability:** Avoid vague adjectives like “fast,” “efficient,” or “better.” If a result is good, quantify it. Use benchmarks or specific metrics (e.g., “The system maintains a latency below 50 ms under peak load”).
 - **Parallel Structure:** When listing items or comparing ideas, use the same grammatical pattern. This improves scannability and logical flow (e.g., “The module handles data ingestion, metric calculation, and report generation”).
@@ -280,12 +308,12 @@ An engineering thesis is a technical manual, not a novel. Clarity and precision 
 
 - **Italics for Emphasis:** Use italics sparingly for new terms. Never use **bold** or ALL CAPS for emphasis within a paragraph.
     - *LaTeX Pro-Tip:* Use `\emph{...}` rather than `\textit{...}`. The `\emph` command is context-aware and will correctly handle nested emphasis (e.g., italics within an already italicized block).
-- **Quotes:** Always use typographic “curly” quotes. In LaTeX, use two backticks for open (``) and two single quotes for close (''), or better, use `\enquote{...}` from the `csquotes` package (see Section 7), which also adapts to the document language.
+- **Quotes:** Always use typographic “curly” quotes. In LaTeX, use two backticks for open (``) and two single quotes for close (''), or better, use `\enquote{...}` from the `csquotes` package (see Section 8), which also adapts to the document language.
 - **Dashes:** Use an en-dash (`--`) for ranges (e.g., 10--20 pages) and an em-dash (`---`) for parenthetical thoughts.
 
 ---
 
-## 7. LaTeX & the NOVAthesis Template
+## 8. LaTeX & the NOVAthesis Template
 
 ### Getting the Template
 
@@ -326,29 +354,29 @@ Finally, keep your sources under **version control** (Git/GitHub): it is your ba
 - [`enumitem`](https://ctan.org/pkg/enumitem): Gives you total control over lists (`itemize`, `enumerate`). Use it to reduce vertical spacing between items or to change numbering styles (e.g., a), b), c)).
 - [`siunitx`](https://www.ctan.org/pkg/siunitx): The absolute gold standard for units. Use `\qty{10}{\milli\second}` for quantities and `\unit{\milli\second}` for standalone units, ensuring the spacing and font are always correct.
 - [`csquotes`](https://www.ctan.org/pkg/csquotes): Provides advanced facilities for inline and block quotations (`\enquote{...}`). It automatically handles nested quotes and ensures that punctuation is placed correctly according to your document's language settings.
-- [`todonotes`](https://www.ctan.org/pkg/todonotes): A lifesaver during the drafting phase. It allows you to place 'To-Do' notes in the margins or as a list at the beginning of the document, ensuring you never forget to address a pending task or a comment from your advisor.
+- [`todonotes`](https://www.ctan.org/pkg/todonotes): A lifesaver during the drafting phase. It allows you to place ‘To-Do’ notes in the margins or as a list at the beginning of the document, ensuring you never forget to address a pending task or a comment from your advisor.
 - [`algorithmicx`](https://www.ctan.org/pkg/algorithmicx): Provides a flexible environment for typesetting algorithms in a clear, structured way. It supports nested loops, conditionals, and can be customized to match the pseudocode style of your specific research community.
 - [`amsmath`, `amssymb`](https://www.ctan.org/pkg/amsmath): The industry standard for mathematical typesetting. They provide advanced environments for multi-line equations, custom operators, and a vast library of mathematical symbols.
 - [`amsthm`](https://www.ctan.org/pkg/amsthm): Offers a structured way to typeset theorems, definitions, lemmas, and proofs. It allows you to easily switch between different styles while maintaining consistent numbering.
 - [`listings`](https://www.ctan.org/pkg/listings): A robust package for including source code. It supports syntax highlighting, line numbering, and can import code directly from external files.
 - [`minted`](https://www.ctan.org/pkg/minted): An alternative to `listings` that uses the Python-based Pygments library for superior syntax highlighting. Note that it requires compiling with `-shell-escape` and a working Python/Pygments installation (Overleaf handles this automatically).
 - [`xurl`](https://www.ctan.org/pkg/xurl): A simple but essential package that allows URLs to break at any character, preventing long web addresses from overflowing into the margins.
-- [`widows-and-orphans`](https://www.ctan.org/pkg/widows-and-orphans): Helps you maintain high typographic standards by identifying 'widows' (a single line at the top of a page) and 'orphans' (a single line at the bottom) and providing warnings.
+- [`widows-and-orphans`](https://www.ctan.org/pkg/widows-and-orphans): Helps you maintain high typographic standards by identifying ‘widows’ (a single line at the top of a page) and ‘orphans’ (a single line at the bottom) and providing warnings.
 
 ### Workflow Hacks
 
 - **Comment your logic:** Use `%` to leave notes for yourself or your advisor in the source code.
 - **Labels with Prefixes:** Stay organized with a consistent labeling system: `fig:architecture`, `tab:results`, `eq:objective`, `lst:algorithm`.
 - **The “Non-breaking Space” (`~`):** Always place a tilde before a `\cite` or `\ref`, and before numbers in general, to prevent them from jumping to a new line alone: `...logic~\cite{key}`, “In~1974 there was a revolution in Portugal.” (No space after the tilde!)
-- **Citing Authors in Text:** Use `\citeauthor{key}` to properly typeset the authors' names in your text, and place `\cite{...}` immediately after the word or phrase it supports (see *Where to Place the Citation?* in Section 5).
+- **Citing Authors in Text:** Use `\citeauthor{key}` to properly typeset the authors' names in your text, and place `\cite{...}` immediately after the word or phrase it supports (see *Where to Place the Citation?* in Section 6).
 
 ---
 
-## 8. The MSc Toolbox
+## 9. The MSc Toolbox
 
 ### Online Editors
 
-- **[Overleaf](https://www.overleaf.com):** The standard for collaboration and ease of use. (Mind the free-plan compile timeout on large documents; see *Local Installation* in Section 7.)
+- **[Overleaf](https://www.overleaf.com):** The standard for collaboration and ease of use. (Mind the free-plan compile timeout on large documents; see *Local Installation* in Section 8.)
 - **[OpenAI Prism](https://prism.openai.com):** A modern alternative for AI-assisted collaborative editing.
 - **[Octree](https://www.useoctree.com) / [Bibby AI](https://trybibby.com):** AI-native LaTeX editors that offer project-wide awareness and formatting assistance.
 - **[WebLaTeX](https://github.com/sanjib-sen/WebLaTex):** Recommended only for advanced, “tech-safe” users who require specialized control over their environment.
@@ -372,7 +400,7 @@ Finally, keep your sources under **version control** (Git/GitHub): it is your ba
 
 ---
 
-## 9. Final Submission Checklist
+## 10. Final Submission Checklist
 
 - [ ] **Length:** Is it under 35 pages? (Quality > Quantity).
 - [ ] **AI Disclosure:** Is the mandatory AI Disclosure Statement included, accurate, and complete?
@@ -385,7 +413,7 @@ Finally, keep your sources under **version control** (Git/GitHub): it is your ba
 
 ---
 
-## 10. Further Reading
+## 11. Further Reading
 
 - [Advice for writing LaTeX documents](https://github.com/dspinellis/latex-advice), by [Diomidis Spinellis](https://github.com/dspinellis)
 - [How to Write a Great Research Paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/), by *Simon Peyton Jones*
