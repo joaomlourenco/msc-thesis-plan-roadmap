@@ -13,17 +13,18 @@ The MSc dissertation is divided into two distinct phases: the **preparation** (t
 
 ### Deliverables and Evaluation
 
-- **The Document:** You must write a document of **at most 35 pages** using the School's official template (**NOVAthesis**, see Section 9). The limit refers to the main content (pages numbered with arabic numbers) and does not include the Bibliography; when in doubt about what counts (front matter, bibliography, annexes), confirm with your advisor.
-    - *Note:* The MSc Plan is a solid foundation for your final MSc Thesis. However, it should **never be used “as is”** in the final stage; it must be carefully revised, expanded, and updated as your research evolves and results are obtained.
-- **The MSC Plan Discussion:** The *MSc Plan* phase concludes with an exam including an oral presentation (15 min) and followed by a Q&A session.
-- **The Committee:**  The commmittee includes your advisor and another professor from the department, who has volunteered to carefully reviewed your document and will discuss your work plan with you. The attitude is generally positive and constructive, but be prepared for “hard” questions on any of the expectations listed in Section 2.
-- **The Result:** The result is binary: **Approved** or **Failed**.
+- **The Document:** You must write a document of **at most 35 pages** using the School's official template (**NOVAthesis**, see Section 9). The limit refers to the main content (pages numbered with arabic numbers) and does not include the Bibliography; frontmatter is numbered with roman numerals. It is strongly recommended **not** to add appendices or annexes, as committee members will most likely not look at them.
+    - *Note:* The MSc Plan is a solid foundation for your final MSc Thesis. However, it should **never be used “as is”** in the final stage; it must be carefully revised, expanded, and updated as your research evolves and results are obtained (see Section 12).
+- **The MSc Plan Discussion:** The *MSc Plan* phase concludes with an exam including an oral presentation of approximately 15 slides (~15 minutes: 3–5 min for Context & Problem, 5–8 min for Related Work, and 4–6 min for Work Plan), followed by a Q&A session.
+- **The Committee:** The committee is nominated by the MSc Coordinator after the submission of the MSc plan. It includes your advisor and another professor from the department, who will carefully review your document and discuss your work plan with you. The attitude is generally positive and constructive, but be prepared for “hard” questions on any of the expectations listed in Section 2.
+- **The Result:** The result is binary: **Approved** or **Failed**. Failing requires the student to repeat the defense of the MSc Plan in the following semester (on the same topic—if the advisor agrees to continue supervision—or a different topic).
+- **Industry Partnerships & NDAs:** For MSc plans and theses conducted in partnership with a company or industry sponsor, Non-Disclosure Agreements (NDAs) can be signed to protect corporate interests, allowing for a closed (non-public) defense.
 
 ### Mandatory: AI Disclosure Statement
 
-According to NOVA FCT regulations, both the MSc Plan and the MSc Thesis **must** include an AI Disclosure Statement.
+According to NOVA FCT regulations, both the MSc Plan and the MSc Thesis **must** include an AI Disclosure Statement. The **NOVAthesis** template includes a standardized form for this disclosure.
 
-- **The Requirement:** You must accurately and transparently declare how (and to what extent) AI tools (like LLMs, GitHub Copilot, etc.) were used in the research, coding, or writing process.
+- **The Requirement:** You must accurately and transparently declare how (and to what extent) AI tools (like LLMs, GitHub Copilot, etc.) were used in the research, coding, or writing process using the template's standardized form.
 - **Why it Matters:** A clear declaration is crucial for the **credibility** and **evaluation** of your work. It allows the committee to properly appreciate your original contributions and ensures scientific integrity.
 - **Consequence:** Failure to disclose or providing an inaccurate declaration can lead to serious ethical queries and may affect the final evaluation.
 
@@ -47,13 +48,15 @@ By the end of this phase, you are expected to be able to:
 
 ## 3. How You Will Work: The Weekly Meeting
 
-Your progress rests on a simple, disciplined weekly rhythm with your advisor. Get this rhythm right and everything else becomes easier.
+> _This section is tightly connected with my own working and supervising methodology.  Your adviser may have different rules or even a different methodology. Please confirm with them what does and does not apply._
+
+Your progress rests on a simple, disciplined weekly rhythm with your advisor. Get this rhythm right and everything else becomes easier. When there is co-supervision, usually both advisers participate in the weekly meeting (sporadically only one may attend).
 
 ### The Weekly Cycle
 
 - **The meeting (day X):** You meet your advisor once a week, on a fixed weekday. **You and your advisor agree on day X at the beginning of the semester.**
 - **The deliverable (day X-2):** By the end of the day, two days before the meeting, you send your advisor a document with whatever you wrote during that week.
-    - **Format:** Write it in **LaTeX and deliver it as a PDF** (use the NOVAthesis template from the start). The contents grow with your work: usually you begin with notes on the background and related work, then the Introduction (with a clear definition of your goals), and later the work plan.
+    - **Format:** Write it in **LaTeX and deliver it as a PDF** (use the NOVAthesis template from the start). If you worked in a new separate document that week, send that document. If the work continued on a document from the previous week, send the whole document with a clear note stating what is new. The contents grow with your work: usually you begin with notes on the background and related work, then the Introduction (with a clear definition of your goals), and later the work plan.
     - **How to send it:** Agree the channel with your advisor (e.g., email, a shared Overleaf project, or a Git repository).
     - **If you wrote nothing that week:** Still send an email on day X-2 saying so, and state whether the meeting should be held or cancelled.
 - **The feedback (day X):** At the meeting you receive feedback on what you wrote, following the agenda below.
@@ -239,6 +242,14 @@ Ensuring others can replicate your results is key to scientific credibility.
     - *Month 3-5:* Core Development, Experimentation, and Data Collection.
     - *Month 6:* Final Analysis, Evaluation, and Thesis Writing.
 - **The “Oh No!” Buffer:** Always add a 20% margin to your timeline for unexpected bugs, hardware failures, or advisor feedback cycles.
+
+#### Risk Assessment & Contingency Planning (Plan B)
+
+Identify key technical, data, or experimental risks early and define realistic mitigation strategies:
+- **Data Risk:** What if the required dataset is unavailable, incomplete, or restricted? Identify fallback datasets or synthetic data generation techniques.
+- **Dependency & Tooling Risk:** What if key third-party libraries or open-source implementations are unmaintained or broken? Plan for alternative tools or baseline implementations.
+- **Hardware & Resource Constraints:** What if required GPU time, server access, or hardware components are delayed? Outline low-scale local testing methods as a fallback.
+- **Performance Risk:** What if the proposed insight does not outperform the baseline as expected? Define intermediate evaluation milestones so negative results lead to timely iteration rather than a blocked thesis.
 
 ---
 
@@ -450,7 +461,17 @@ Finally, keep your sources under **version control** (Git/GitHub): it is your ba
 
 ---
 
-## 12. Further Reading
+## 12. Transitioning from MSc Plan to Final Thesis
+
+The MSc Plan is the architectural blueprint, but the final MSc Thesis is the completed building. When moving from Phase 1 (Plan) to Phase 2 (Thesis), apply these essential revision rules:
+
+- **Chapter 1 (Introduction):** Must be carefully revised to eliminate all references to future intentions (e.g., replace "We will propose...", "We plan to evaluate..." with past/present tense describing what was actually achieved).
+- **Chapter 2 (Background & Related Work):** Must be revised in light of the real work developed during the thesis. Remove literature or technology sections that turned out to be irrelevant, and add new papers or tools discovered during implementation.
+- **Chapter 3 (Work Plan):** Is mostly discarded as a standalone chapter in the final thesis (since temporal planning is no longer relevant after completion). However, key technical components—such as system architecture, design decisions, and evaluation methodologies—should be carefully adapted and integrated into the dedicated Architecture, Implementation, and Evaluation chapters of the final MSc Thesis.
+
+---
+
+## 13. Further Reading
 
 - [Advice for writing LaTeX documents](https://github.com/dspinellis/latex-advice), by [Diomidis Spinellis](https://github.com/dspinellis)
 - [How to Write a Great Research Paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/), by *Simon Peyton Jones*
