@@ -3,6 +3,8 @@
 
 Welcome to the first major milestone of your Master's journey. The **MSc Plan** is not just a hurdle; it is the architectural blueprint for your research. Your goal is to produce a short document that proves your problem is worth solving, that you understand the landscape, and that you have a realistic path to execution.
 
+While certain sections of this document offer general guidance, this resource is specifically designed for Computer Science students at [NOVA FCT](www.di.fct.unl.pt). Readers from other scientific domains are advised to consider the inherent technical, methodological, and cultural distinctions.
+
 ---
 
 ## 1. The MSc Plan at a Glance
@@ -11,7 +13,7 @@ The MSc dissertation is divided into two distinct phases: the **preparation** (t
 
 ### Deliverables and Evaluation
 
-- **The Document:** You must write a document of **at most 35 pages** using the School's official template (**NOVAthesis**, see Section 8). The limit refers to the main content (pages numbered with arabic numbers) and does not include the Bibliography; when in doubt about what counts (front matter, bibliography, annexes), confirm with your advisor.
+- **The Document:** You must write a document of **at most 35 pages** using the School's official template (**NOVAthesis**, see Section 9). The limit refers to the main content (pages numbered with arabic numbers) and does not include the Bibliography; when in doubt about what counts (front matter, bibliography, annexes), confirm with your advisor.
     - *Note:* The MSc Plan is a solid foundation for your final MSc Thesis. However, it should **never be used “as is”** in the final stage; it must be carefully revised, expanded, and updated as your research evolves and results are obtained.
 - **The MSC Plan Discussion:** The *MSc Plan* phase concludes with an exam including an oral presentation (15 min) and followed by a Q&A session.
 - **The Committee:**  The commmittee includes your advisor and another professor from the department, who has volunteered to carefully reviewed your document and will discuss your work plan with you. The attitude is generally positive and constructive, but be prepared for “hard” questions on any of the expectations listed in Section 2.
@@ -39,11 +41,46 @@ By the end of this phase, you are expected to be able to:
 - **Master Related Work:** Demonstrate solid knowledge of the “related work,” providing a critical perspective (pros and cons) of the most relevant aspects. Expect some non-trivial questions on this topic.
 - **Master the Background:** Demonstrate solid knowledge of the fundamentals (background) of the areas related to the topic. Expect some non-trivial questions on this topic.
 - **Critical Tech Evaluation:** Demonstrate a critical evaluation of the relevant technologies.
-- **Work Plan:** Propose a credible work plan for the “elaboration” phase (see *Temporal Planning* in Section 4 for detailed guidance).
+- **Work Plan:** Propose a credible work plan for the “elaboration” phase (see *Temporal Planning* in Section 5 for detailed guidance).
 
 ---
 
-## 3. Your Thesis Is an Experiment: The Scientific Method in Engineering
+## 3. How You Will Work: The Weekly Meeting
+
+Your progress rests on a simple, disciplined weekly rhythm with your advisor. Get this rhythm right and everything else becomes easier.
+
+### The Weekly Cycle
+
+- **The meeting (day X):** You meet your advisor once a week, on a fixed weekday. **You and your advisor agree on day X at the beginning of the semester.**
+- **The deliverable (day X-2):** By the end of the day, two days before the meeting, you send your advisor a document with whatever you wrote during that week.
+    - **Format:** Write it in **LaTeX and deliver it as a PDF** (use the NOVAthesis template from the start). The contents grow with your work: usually you begin with notes on the background and related work, then the Introduction (with a clear definition of your goals), and later the work plan.
+    - **How to send it:** Agree the channel with your advisor (e.g., email, a shared Overleaf project, or a Git repository).
+    - **If you wrote nothing that week:** Still send an email on day X-2 saying so, and state whether the meeting should be held or cancelled.
+- **The feedback (day X):** At the meeting you receive feedback on what you wrote, following the agenda below.
+- **After the meeting:** Write a brief **minute (transcription)** of the meeting and send it to your advisor, so that decisions and open points are never lost between weeks.
+
+### The Meeting Agenda
+
+You drive the agenda. Come prepared to cover:
+
+1.  A summary of what was done the previous week.
+2.  The lessons learned from that week's work.
+3.  Open points, doubts, and analysis of results.
+4.  Comments on the text you sent on day X-2.
+5.  Planning for the coming week.
+
+The meeting is **preferably in person** (online only if necessary) and lasts **30 to 60 minutes**.
+
+### Managing the Semester's Rhythm
+
+Your semester is not uniform. Mid-semester brings peak-pressure periods from other courses (tests and projects).
+
+- **It is fine to pause.** You may reasonably decide not to work on the thesis during those weeks, and even cancel the meeting. **If you cancel, do it on day X-2**, not at the last minute.
+- **Work ahead early.** The key to not accumulating a backlog is to *work ahead* at the start of the semester, when the load from other courses is minimal. In the framework of the thesis plan, “working ahead” means: define the objectives, study the background, study the related work, study the related technologies, and define the work plan.
+
+---
+
+## 4. Your Thesis Is an Experiment: The Scientific Method in Engineering
 
 Before diving into the document structure, step back and notice something useful: the engineering process you already know is the scientific method in disguise. Your thesis is not “just building a system”; it is running an experiment.
 
@@ -67,11 +104,11 @@ Keep five consequences in mind:
 
 The analogies above also have limits, and knowing them keeps you honest: science optimizes for *knowledge* (a negative result is still a result), while engineering optimizes for a *working artifact* (a negative result means rework); and nature's laws do not change during your experiment, but requirements do.
 
-This mapping is exactly what the suggested structure in Section 4 implements: Chapter 1 of the Dissertation Plan document states your question and hypothesis, Chapter 2 is your literature review, and Chapter 3 is your experiment design.
+This mapping is exactly what the suggested structure in Section 5 implements: Chapter 1 of the Dissertation Plan document states your question and hypothesis, Chapter 2 is your literature review, and Chapter 3 is your experiment design.
 
 ---
 
-## 4. Document Structure (Suggestions Only)
+## 5. Document Structure (Suggestions Only)
 
 > **Important Note:** The structure, organization, and contents listed below are **ONLY SUGGESTIONS** (hints) and should never be followed blindly. Every research project is unique; you are expected to create your own document structure tailored to your specific topic, goals, and approach.
 
@@ -165,7 +202,7 @@ This is where you prove you are an engineer/scientist, not just a dreamer.
 
 #### Proposed Solution (The “What”)
 
-- **Architecture:** Use a clean, vector-based diagram (use TikZ or draw.io exported as PDF; see *Visuals & Layout* in Section 7).
+- **Architecture:** Use a clean, vector-based diagram (use TikZ or draw.io exported as PDF; see *Visuals & Layout* in Section 8).
 - **Work Environment:** Detail the software stacks, hardware constraints, or laboratory settings you will rely on.
 
 #### Validation Strategy (The “How”)
@@ -205,7 +242,7 @@ Ensuring others can replicate your results is key to scientific credibility.
 
 ---
 
-## 5. Working with the Literature
+## 6. Working with the Literature
 
 Reading effectively is as important as writing. Not all papers are created equal.
 
@@ -248,7 +285,7 @@ Use LLMs as a **Rubber Duck** or **Tutor**, never as a ghostwriter.
 
 ---
 
-## 6. Citation Mechanics & Ethics
+## 7. Citation Mechanics & Ethics
 
 In technical writing, citations are the “currency” of credibility. Misplacing them can lead to ambiguity or, worse, accusations of plagiarism.
 
@@ -263,7 +300,7 @@ The placement of a citation changes its meaning. Follow these rules:
 3.  **End of the Paragraph (Block Support):** **Avoid this.** Placing a single citation at the end of a paragraph is ambiguous. Does it support the last sentence or the whole paragraph?
     - *Pro-Tip:* Cite as early as possible in the paragraph to establish the source of the logic.
 
-(For the LaTeX mechanics of citing, see *Workflow Hacks* in Section 8.)
+(For the LaTeX mechanics of citing, see *Workflow Hacks* in Section 9.)
 
 ### Ethics & Giving Credit
 
@@ -276,7 +313,7 @@ The placement of a citation changes its meaning. Follow these rules:
 
 ---
 
-## 7. Technical Writing & Typography
+## 8. Technical Writing & Typography
 
 An engineering thesis is a technical manual, not a novel. Clarity and precision are your primary goals. Use these rules to ensure your text is professional and readable.
 
@@ -308,12 +345,12 @@ An engineering thesis is a technical manual, not a novel. Clarity and precision 
 
 - **Italics for Emphasis:** Use italics sparingly for new terms. Never use **bold** or ALL CAPS for emphasis within a paragraph.
     - *LaTeX Pro-Tip:* Use `\emph{...}` rather than `\textit{...}`. The `\emph` command is context-aware and will correctly handle nested emphasis (e.g., italics within an already italicized block).
-- **Quotes:** Always use typographic “curly” quotes. In LaTeX, use two backticks for open (``) and two single quotes for close (''), or better, use `\enquote{...}` from the `csquotes` package (see Section 8), which also adapts to the document language.
+- **Quotes:** Always use typographic “curly” quotes. In LaTeX, use two backticks for open (``) and two single quotes for close (''), or better, use `\enquote{...}` from the `csquotes` package (see Section 9), which also adapts to the document language.
 - **Dashes:** Use an en-dash (`--`) for ranges (e.g., 10--20 pages) and an em-dash (`---`) for parenthetical thoughts.
 
 ---
 
-## 8. LaTeX & the NOVAthesis Template
+## 9. LaTeX & the NOVAthesis Template
 
 ### Getting the Template
 
@@ -368,15 +405,15 @@ Finally, keep your sources under **version control** (Git/GitHub): it is your ba
 - **Comment your logic:** Use `%` to leave notes for yourself or your advisor in the source code.
 - **Labels with Prefixes:** Stay organized with a consistent labeling system: `fig:architecture`, `tab:results`, `eq:objective`, `lst:algorithm`.
 - **The “Non-breaking Space” (`~`):** Always place a tilde before a `\cite` or `\ref`, and before numbers in general, to prevent them from jumping to a new line alone: `...logic~\cite{key}`, “In~1974 there was a revolution in Portugal.” (No space after the tilde!)
-- **Citing Authors in Text:** Use `\citeauthor{key}` to properly typeset the authors' names in your text, and place `\cite{...}` immediately after the word or phrase it supports (see *Where to Place the Citation?* in Section 6).
+- **Citing Authors in Text:** Use `\citeauthor{key}` to properly typeset the authors' names in your text, and place `\cite{...}` immediately after the word or phrase it supports (see *Where to Place the Citation?* in Section 7).
 
 ---
 
-## 9. The MSc Toolbox
+## 10. The MSc Toolbox
 
 ### Online Editors
 
-- **[Overleaf](https://www.overleaf.com):** The standard for collaboration and ease of use. (Mind the free-plan compile timeout on large documents; see *Local Installation* in Section 8.)
+- **[Overleaf](https://www.overleaf.com):** The standard for collaboration and ease of use. (Mind the free-plan compile timeout on large documents; see *Local Installation* in Section 9.)
 - **[OpenAI Prism](https://prism.openai.com):** A modern alternative for AI-assisted collaborative editing.
 - **[Octree](https://www.useoctree.com) / [Bibby AI](https://trybibby.com):** AI-native LaTeX editors that offer project-wide awareness and formatting assistance.
 - **[WebLaTeX](https://github.com/sanjib-sen/WebLaTex):** Recommended only for advanced, “tech-safe” users who require specialized control over their environment.
@@ -400,7 +437,7 @@ Finally, keep your sources under **version control** (Git/GitHub): it is your ba
 
 ---
 
-## 10. Final Submission Checklist
+## 11. Final Submission Checklist
 
 - [ ] **Length:** Is it under 35 pages? (Quality > Quantity).
 - [ ] **AI Disclosure:** Is the mandatory AI Disclosure Statement included, accurate, and complete?
@@ -413,7 +450,7 @@ Finally, keep your sources under **version control** (Git/GitHub): it is your ba
 
 ---
 
-## 11. Further Reading
+## 12. Further Reading
 
 - [Advice for writing LaTeX documents](https://github.com/dspinellis/latex-advice), by [Diomidis Spinellis](https://github.com/dspinellis)
 - [How to Write a Great Research Paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/), by *Simon Peyton Jones*
