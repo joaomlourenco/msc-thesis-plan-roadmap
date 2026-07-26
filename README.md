@@ -13,8 +13,8 @@ The MSc dissertation is divided into two distinct phases: the **preparation** (t
 
 ### Deliverables and Evaluation
 
-- **The Document:** You must write a document of **at most 35 pages** using the School's official template (**NOVAthesis**, see Section 9). The limit refers to the main content (pages numbered with arabic numbers) and does not include the Bibliography; frontmatter is numbered with roman numerals. It is strongly recommended **not** to add appendices or annexes, as committee members will most likely not look at them.
-    - *Note:* The MSc Plan is a solid foundation for your final MSc Thesis. However, it should **never be used “as is”** in the final stage; it must be carefully revised, expanded, and updated as your research evolves and results are obtained (see Section 12).
+- **The Document:** You must write a document of **at most 35 pages** using the School's official template (**NOVAthesis**, see Section 10). The limit refers to the main content (pages numbered with arabic numbers) and does not include the Bibliography; frontmatter is numbered with roman numerals. It is strongly recommended **not** to add appendices or annexes, as committee members will most likely not look at them.
+    - *Note:* The MSc Plan is a solid foundation for your final MSc Thesis. However, it should **never be used “as is”** in the final stage; it must be carefully revised, expanded, and updated as your research evolves and results are obtained (see Section 13).
 - **The MSc Plan Discussion:** The *MSc Plan* phase concludes with an exam including an oral presentation of approximately 15 slides (~15 minutes: 3–5 min for Context & Problem, 5–8 min for Related Work, and 4–6 min for Work Plan), followed by a Q&A session.
 - **The Committee:** The committee is nominated by the MSc Coordinator after the submission of the MSc plan. It includes your advisor and another professor from the department, who will carefully review your document and discuss your work plan with you. The attitude is generally positive and constructive, but be prepared for “hard” questions on any of the expectations listed in Section 2.
 - **The Result:** The result is binary: **Approved** or **Failed**. Failing requires the student to repeat the defense of the MSc Plan in the following semester (on the same topic—if the advisor agrees to continue supervision—or a different topic).
@@ -205,7 +205,7 @@ This is where you prove you are an engineer/scientist, not just a dreamer.
 
 #### Proposed Solution (The “What”)
 
-- **Architecture:** Use a clean, vector-based diagram (use TikZ or draw.io exported as PDF; see *Visuals & Layout* in Section 8).
+- **Architecture:** Use a clean, vector-based diagram (use TikZ or draw.io exported as PDF; see *Visuals & Layout* in Section 9).
 - **Work Environment:** Detail the software stacks, hardware constraints, or laboratory settings you will rely on.
 
 #### Validation Strategy (The “How”)
@@ -283,11 +283,11 @@ Also learn **speed reading** techniques for scientific papers (e.g., first pass:
 ### Organizing the Chaos
 
 - **Categorization:** Use your literature review to put order into the chaos by categorizing papers, making it beneficial for your readers.
-- **AI Synthesis:** Tools like **[NotebookLM](https://notebooklm.google.com)** can help you *compare and synthesize* your curated PDFs. Upload your “must-read” papers and ask, e.g., “What are the common limitations mentioned across these 5 papers?” Use the output to inform your own analysis; do **not** paste generated text as your Related Work section (see below and the AI Disclosure Statement in Section 1).
+- **AI Synthesis:** Tools like **[NotebookLM](https://notebooklm.google.com)** can help you *compare and synthesize* your curated PDFs. Upload your “must-read” papers and ask, e.g., “_What are the common limitations mentioned across these 5 papers?_” Use the output to inform your own analysis; do **not** paste generated text as your Related Work section (see below and the AI Disclosure Statement in Section 1).
 
 ### Using AI/LLMs with Integrity
 
-Use LLMs as a **Rubber Duck** or **Tutor**, never as a ghostwriter.
+Use LLMs as a **Rubber Duck** or **Tutor**, never as a ghostwriter (see Section 8 for the full do/don't list).
 
 - **Hallucination Check:** **Never** trust an LLM's citation list. They often invent titles that sound real. Always find the DOI yourself.
 - **Prompting for Integrity:**
@@ -311,7 +311,18 @@ The placement of a citation changes its meaning. Follow these rules:
 3.  **End of the Paragraph (Block Support):** **Avoid this.** Placing a single citation at the end of a paragraph is ambiguous. Does it support the last sentence or the whole paragraph?
     - *Pro-Tip:* Cite as early as possible in the paragraph to establish the source of the logic.
 
-(For the LaTeX mechanics of citing, see *Workflow Hacks* in Section 9.)
+(For the LaTeX mechanics of citing, see *Workflow Hacks* in Section 10.)
+
+### A Well-Formatted Bibliography Matters
+
+Your bibliography is the first thing an expert reader inspects, and a messy one signals carelessness. Aim for **clean, consistent, and complete** BibTeX entries.
+
+- **Start from quality sources.** Prefer publisher metadata over the “messy” BibTeX from Google Scholar. Use [DOI2BIB](https://www.doi2bib.org) for a clean entry from a DOI, [AnyStyle](https://anystyle.io) to turn a plain-text reference list into structured BibTeX, or a reference manager like [Zotero](https://www.zotero.org) with [Better BibTeX](https://retorque.re/zotero-better-bibtex/).
+- **Clean your `.bib` file.** Over time your file accumulates duplicates, inconsistent fields, and broken capitalization. Tidy it with an online tool like [BibTeX Tidy](https://flamingtempura.github.io/bibtex-tidy/), or locally with [betterbib](https://github.com/nschloe/betterbib) or [bibtool](https://ctan.org/pkg/bibtool).
+- **Be consistent.** Use the same key style, keep author names in full, and protect capitals in titles with braces (e.g., `title = {A Study of {TCP} Congestion}`) so your bibliography style does not lowercase acronyms.
+- **Verify, always.** Whatever generated the entry (a tool or an LLM), check the authors, year, venue, and DOI against the real publication before trusting it.
+
+(See Section 11 for the full list of bibliography tools.)
 
 ### Ethics & Giving Credit
 
@@ -324,7 +335,33 @@ The placement of a citation changes its meaning. Follow these rules:
 
 ---
 
-## 8. Technical Writing & Typography
+## 8. Ethical Use of AI Tools
+
+AI tools (LLMs like ChatGPT or Claude, coding assistants like GitHub Copilot, research aids like NotebookLM) are now part of the academic toolbox. Used well, they make you faster; used badly, they undermine the very thing a thesis is meant to prove: that *you* did the work and understand it. The guiding principle is simple: **AI is your assistant, not your author.** You remain fully responsible for every word, result, and citation in your document.
+
+Remember that whatever you use and however you used it must be declared in your **AI Disclosure Statement** (see Section 1). Moderation is part of integrity: if AI wrote it, you did not, and you cannot honestly claim it as your contribution.
+
+### What You Can Do (AI as Assistant)
+
+- **Brainstorm and challenge ideas:** Ask it to find logical gaps in your reasoning, list counter-arguments, or suggest alternative approaches. Use it as a *rubber duck* and a *tutor*.
+- **Understand hard material:** Ask it to explain a difficult paper, concept, or error message in simpler terms (then verify against the primary source).
+- **Improve your own text:** Paste text *you wrote* and ask for feedback on clarity, grammar, or structure. This is especially useful when English is not your first language.
+- **Assist with mechanics:** Convert a raw reference into a BibTeX entry, draft boilerplate code, or generate a first LaTeX table or TikZ sketch, always reviewing and correcting the output yourself.
+- **Summarize and compare *your* sources:** Upload papers *you have curated* and ask for a comparative synthesis to inform (not replace) your own analysis.
+
+### What You Should Not Do (AI as Author)
+
+- **Do not let AI write your content:** Never paste generated paragraphs as your Introduction, Related Work, or analysis. The ideas and their expression must be yours.
+- **Do not trust AI facts or citations:** LLMs *hallucinate*, confidently inventing plausible-sounding references, results, and quotes. **Always** verify every fact and locate every DOI yourself.
+- **Do not outsource your thinking:** If you cannot explain, defend, or reproduce something in your thesis, it should not be there. The committee will ask, and “the AI wrote it” is not an answer.
+- **Do not upload confidential or unpublished work carelessly:** Check where your data goes and whether it may be used for training, especially with third-party tools (see the caution in Section 11).
+- **Do not hide your usage:** Undisclosed or misrepresented AI use is an integrity violation and can seriously affect your evaluation.
+
+> **The Litmus Test:** If a tool helps *you* think, learn, or polish, it is probably fine. If it thinks *for you* or produces content you then claim as your own, it is not. When in doubt, ask your advisor and disclose it.
+
+---
+
+## 9. Technical Writing & Typography
 
 An engineering thesis is a technical manual, not a novel. Clarity and precision are your primary goals. Use these rules to ensure your text is professional and readable.
 
@@ -356,12 +393,12 @@ An engineering thesis is a technical manual, not a novel. Clarity and precision 
 
 - **Italics for Emphasis:** Use italics sparingly for new terms. Never use **bold** or ALL CAPS for emphasis within a paragraph.
     - *LaTeX Pro-Tip:* Use `\emph{...}` rather than `\textit{...}`. The `\emph` command is context-aware and will correctly handle nested emphasis (e.g., italics within an already italicized block).
-- **Quotes:** Always use typographic “curly” quotes. In LaTeX, use two backticks for open (``) and two single quotes for close (''), or better, use `\enquote{...}` from the `csquotes` package (see Section 9), which also adapts to the document language.
+- **Quotes:** Always use typographic “curly” quotes. In LaTeX, use two backticks for open (``) and two single quotes for close (''), or better, use `\enquote{...}` from the `csquotes` package (see Section 10), which also adapts to the document language.
 - **Dashes:** Use an en-dash (`--`) for ranges (e.g., 10--20 pages) and an em-dash (`---`) for parenthetical thoughts.
 
 ---
 
-## 9. LaTeX & the NOVAthesis Template
+## 10. LaTeX & the NOVAthesis Template
 
 ### Getting the Template
 
@@ -420,11 +457,11 @@ Finally, keep your sources under **version control** (Git/GitHub): it is your ba
 
 ---
 
-## 10. The MSc Toolbox
+## 11. The MSc Toolbox
 
 ### Online Editors
 
-- **[Overleaf](https://www.overleaf.com):** The standard for collaboration and ease of use. (Mind the free-plan compile timeout on large documents; see *Local Installation* in Section 9.)
+- **[Overleaf](https://www.overleaf.com):** The standard for collaboration and ease of use. (Mind the free-plan compile timeout on large documents; see *Local Installation* in Section 10.)
 - **[OpenAI Prism](https://prism.openai.com):** A modern alternative for AI-assisted collaborative editing.
 - **[Octree](https://www.useoctree.com) / [Bibby AI](https://trybibby.com):** AI-native LaTeX editors that offer project-wide awareness and formatting assistance.
 - **[WebLaTeX](https://github.com/sanjib-sen/WebLaTex):** Recommended only for advanced, “tech-safe” users who require specialized control over their environment.
@@ -436,7 +473,10 @@ Finally, keep your sources under **version control** (Git/GitHub): it is your ba
 - **[Zotero](https://www.zotero.org):** The gold standard for managing references. Use the **[Better BibTeX](https://retorque.re/zotero-better-bibtex/)** extension for the best results with LaTeX.
 - **[DOI2BIB](https://www.doi2bib.org):** A simple and effective tool to generate clean, minimal BibTeX entries from a DOI. Avoid the “messy” BibTeX often found on Google Scholar.
 - **Other DOI-to-BibTeX Tools:** If DOI2BIB is unavailable, try **[ZoteroBib (zbib.org)](https://zbib.org/)** or **[BibTeX.com](https://www.bibtex.com/c/doi-to-bibtex-converter/)** for reliable metadata fetching.
-- **LLM Assistance:** LLMs can convert raw text references into clean BibTeX entries and search for DOIs. You **must** manually verify the quality of the generated entry and the validity of the DOI.
+- **[AnyStyle](https://anystyle.io):** Paste a plain-text reference list (one reference per line) and it parses each into structured BibTeX, ideal for references that have no DOI.
+- **Cleaning `.bib` files (online):** **[BibTeX Tidy](https://flamingtempura.github.io/bibtex-tidy/)** makes spacing consistent, removes duplicates and unwanted fields, and sorts entries, all in the browser.
+- **Cleaning `.bib` files (local):** **[betterbib](https://github.com/nschloe/betterbib)** cross-checks your entries against online sources and fixes faulty ones (`betterbib update in.bib`, `betterbib format`); **[bibtool](https://ctan.org/pkg/bibtool)** offers fine-grained field manipulation and de-duplication.
+- **LLM Assistance:** LLMs can convert raw text references into clean BibTeX entries and search for DOIs. You **must** manually verify the quality of the generated entry and the validity of the DOI (see Section 8).
 
 ### Essential Web Utilities
 
@@ -448,7 +488,7 @@ Finally, keep your sources under **version control** (Git/GitHub): it is your ba
 
 ---
 
-## 11. Final Submission Checklist
+## 12. Final Submission Checklist
 
 - [ ] **Length:** Is it under 35 pages? (Quality > Quantity).
 - [ ] **AI Disclosure:** Is the mandatory AI Disclosure Statement included, accurate, and complete?
@@ -461,17 +501,30 @@ Finally, keep your sources under **version control** (Git/GitHub): it is your ba
 
 ---
 
-## 12. Transitioning from MSc Plan to Final Thesis
+## 13. Transitioning from MSc Plan to Final Thesis
 
 The MSc Plan is the architectural blueprint, but the final MSc Thesis is the completed building. When moving from Phase 1 (Plan) to Phase 2 (Thesis), apply these essential revision rules:
 
-- **Chapter 1 (Introduction):** Must be carefully revised to eliminate all references to future intentions (e.g., replace "We will propose...", "We plan to evaluate..." with past/present tense describing what was actually achieved).
+- **Chapter 1 (Introduction):** Must be carefully revised to eliminate all references to future intentions (e.g., replace “We will propose...”, “We plan to evaluate...” with past/present tense describing what was actually achieved).
 - **Chapter 2 (Background & Related Work):** Must be revised in light of the real work developed during the thesis. Remove literature or technology sections that turned out to be irrelevant, and add new papers or tools discovered during implementation.
 - **Chapter 3 (Work Plan):** Is mostly discarded as a standalone chapter in the final thesis (since temporal planning is no longer relevant after completion). However, key technical components—such as system architecture, design decisions, and evaluation methodologies—should be carefully adapted and integrated into the dedicated Architecture, Implementation, and Evaluation chapters of the final MSc Thesis.
 
+### Appendices and Annexes (For the Final Thesis)
+
+In the MSc Plan you are advised **not** to use appendices or annexes (see Section 1). In the final thesis they become useful, so it is worth knowing the difference:
+
+- **An appendix** contains supporting material that **you produced** but that would break the flow of the main text: full proofs, extra result tables, detailed configuration files, questionnaire forms, or long code listings.
+- **An annex** contains supporting material **produced by others** that you include for reference: a datasheet, a third-party standard, or an external report.
+
+Use them for material that a reader *might* want to consult but does not *need* in order to follow your argument. Keep three rules in mind:
+
+- **The main text must stand on its own.** Anything essential to your argument belongs in the body, not in an appendix. Reference each appendix/annex explicitly from the text (e.g., “the full results are listed in Appendix~B”); an appendix nobody is pointed to will not be read.
+- **Do not use them as a dumping ground** to hide content that would otherwise exceed a page limit or to pad the document.
+- **They come after the bibliography** and are usually labelled with letters (Appendix A, B, ...). The NOVAthesis template provides the proper environment for both.
+
 ---
 
-## 13. Further Reading
+## 14. Further Reading
 
 - [Advice for writing LaTeX documents](https://github.com/dspinellis/latex-advice), by [Diomidis Spinellis](https://github.com/dspinellis)
 - [How to Write a Great Research Paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/), by *Simon Peyton Jones*
